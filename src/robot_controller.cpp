@@ -50,7 +50,7 @@ int main(int argc, char **argv){
             curr_location=prec_location;
             temp_motion.request.x=posx[curr_location];
             temp_motion.request.y=posy[curr_location];
-            std::cout << "\nGoing to the position: x= " << temp_motion.request.x << " y= " <<temp_motion.request.y <<"  " << locations[index] <<std::endl;
+            std::cout << "\nGoing to the position: x= " << temp_motion.request.x << " y= " <<temp_motion.request.y <<"  " << locations[curr_location] <<std::endl;
             cli1.call(temp_motion);
             msg.data=true;
             pub1.publish(msg);
