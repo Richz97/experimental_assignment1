@@ -11,7 +11,7 @@
 ros::Publisher publisher;
 ros::Subscriber subscriber;
 
-char *hints[13]={"ID1/where/Conservatory", "ID1/what/Dagger","ID1/where/Kitchen", 
+char *hints[15]={"ID1/where/Conservatory", "ID1/what/Dagger","ID1/where/Kitchen", 
 	   "ID2/who/Plum", "ID2/what/Spanner","ID2/where/Hall",
 	   "ID3/who/Miss.Scarlett", "ID3/what/Revolver","ID3/where/Lounge", 
 	   "ID4/who/Green", "ID4/what/Candlestick","ID4/where/Library",
@@ -38,7 +38,7 @@ int main(int argc, char **argv){
 
 
 void send_hint(const std_msgs::Bool x){
-    int index=randMToN(0,12);
+    int index=randMToN(0,14);
     std_msgs::String msg;
     msg.data=hints[index];
     publisher.publish(msg);
