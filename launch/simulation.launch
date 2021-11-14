@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+
+<node pkg="armor" type="execute" name="armor_service" args="it.emarolab.armor.ARMORMainService"/>
+
+<node name="robot_controller" pkg="experimental_assignment1" type ="robot_controller" output="screen"/>
+   
+<node name="motion_controller"  pkg="experimental_assignment1" type="motion_controller" />
+   
+<node name="oracle_controller"  pkg="experimental_assignment1" type="oracle_controller" />
+
+<node name="hint_controller"  pkg="experimental_assignment1" type="hint_controller.py" output="screen"/>
+
+</launch>
