@@ -65,7 +65,6 @@ def check_callback(msg):
     print('New hint found '+s)
     rcv_hint=s.split('/')
     rospy.set_param('ID', rcv_hint[0])
-    print(rospy.get_param('ID'))
     found=check_rcv(rcv_hint)
     
     if found==0:
