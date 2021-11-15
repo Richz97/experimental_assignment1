@@ -62,7 +62,7 @@ def check_callback(msg):
     global hypot
     done=0
     s=str(msg.data)
-    print('New hint founded '+s)
+    print('New hint found '+s)
     rcv_hint=s.split('/')
     rospy.set_param('ID', rcv_hint[0])
     print(rospy.get_param('ID'))
