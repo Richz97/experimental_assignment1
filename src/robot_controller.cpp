@@ -14,6 +14,8 @@ int posy[9]={5,5,2,-2,-5,-5,-5,0,5};
 char *locations[9]={"Ballroom","Living room","Biliard room","Library","Study","Hall","Conservatory","Dining room","Kitchen"};
 
 int current_state=0;
+int prec_location=0;
+int curr_location=0;
 
 experimental_assignment1::Hypo temp_hypothesis;
 experimental_assignment1::Motion temp_motion;
@@ -24,8 +26,6 @@ double randMToN(double M, double N);
 void clbk_hypo(const experimental_assignment1::Hypo x);
 
 int main(int argc, char **argv){
-    int prec_location=0;
-    int curr_location=0;
     ros::init(argc, argv, "robot_controller");
     
     ros::NodeHandle n;
@@ -50,7 +50,7 @@ int main(int argc, char **argv){
             curr_location=prec_location;
             temp_motion.request.x=posx[curr_location];
             temp_motion.request.y=posy[curr_location];
-            std::cout << "\nGoing to the position: x= " << temp_motion.request.x << " y= " <<temp_motion.request.y <<"  " << locations[curr_location] <<std::endl;
+            std::cout << "\nGoing to the " << locations[curr_location] << " in x=" << temp_motion.request.x << " and y=" << temp_motion.request.y <<std::endl;
             cli1.call(temp_motion);
             msg.data=true;
             pub1.publish(msg);
