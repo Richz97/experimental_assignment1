@@ -29,7 +29,7 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "robot_controller");
     
     ros::NodeHandle n;
-	ros::NodeHandle n1;
+    ros::NodeHandle n1;
     ros::NodeHandle n2;
     ros::NodeHandle n3;
 
@@ -58,7 +58,7 @@ int main(int argc, char **argv){
         }
         if(current_state==1){
             temp_motion.request.x = 0;
-	        temp_motion.request.y = 0;
+	    temp_motion.request.y = 0;
             std::cout << "\nGoing to the Oracle"<<std::endl;
             cli1.call(temp_motion);
             temp_check.request.id=temp_hypothesis.ID;
