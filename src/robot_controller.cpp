@@ -14,8 +14,6 @@ int posy[9]={5,5,2,-2,-5,-5,-5,0,5};
 char *locations[9]={"Ballroom","Living room","Biliard room","Library","Study","Hall","Conservatory","Dining room","Kitchen"};
 
 int current_state=0;
-int prec_location=0;
-int curr_location=0;
 
 experimental_assignment1::Hypo temp_hypothesis;
 experimental_assignment1::Motion temp_motion;
@@ -26,6 +24,7 @@ double randMToN(double M, double N);
 void clbk_hypo(const experimental_assignment1::Hypo x);
 
 int main(int argc, char **argv){
+	
     ros::init(argc, argv, "robot_controller");
     
     ros::NodeHandle n;
@@ -37,7 +36,9 @@ int main(int argc, char **argv){
     ros::Publisher pub1=n1.advertise<std_msgs::Bool>("/reached", 1000);
     ros::ServiceClient cli2=n2.serviceClient<experimental_assignment1::Check>("/check");
     ros:: Subscriber sub1=n3.subscribe("/hypo", 1000, clbk_hypo);
-
+	
+    int prec_location=0;
+    int curr_location=0;
     srand(time(NULL));
 
     while(ros::ok()){
