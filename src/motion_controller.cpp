@@ -2,7 +2,7 @@
 #include "experimental_assignment1/Motion.h"
 #include "std_msgs/Bool.h"
 
-void simulate_motion(experimental_assignment1::Motion::Request &req, experimental_assignment1::Motion::Response &res);
+bool simulate_motion(experimental_assignment1::Motion::Request &req, experimental_assignment1::Motion::Response &res);
 
 int main(int argc, char **argv){
     ros::init(argc, argv, "motion_controller");
@@ -14,7 +14,8 @@ int main(int argc, char **argv){
     return 0;
 }
 
-void simulate_motion(experimental_assignment1::Motion::Request &req, experimental_assignment1::Motion::Response &res){
+bool simulate_motion(experimental_assignment1::Motion::Request &req, experimental_assignment1::Motion::Response &res){
     sleep(1);
     res.ok=true;
+    return 1;
 }
