@@ -17,7 +17,7 @@ char *hints[15]={"ID1/where/Conservatory", "ID1/what/Dagger","ID1/where/Kitchen"
 	   "ID4/who/Green", "ID4/what/Candlestick","ID4/where/Library",
        "ID5/who/Col.Mustard", "ID5/what/Rope","ID5/who/Mrs.Peacock"};
 
-bool check_winner(experimental_assignment1::Check::Request &req, experimental_assignment1::Check::Response &res);
+void check_winner(experimental_assignment1::Check::Request &req, experimental_assignment1::Check::Response &res);
 void send_hint(const std_msgs::Bool x);
 double randMToN(double M, double N);
 
@@ -25,8 +25,8 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "oracle_controller");
     
     ros::NodeHandle n;
-	ros::NodeHandle n1;
-	ros::NodeHandle n2;
+    ros::NodeHandle n1;
+    ros::NodeHandle n2;
 
     subscriber=n.subscribe("/reached", 1000, send_hint);
     publisher=n1.advertise<std_msgs::String>("/hint", 1000);
@@ -49,7 +49,7 @@ double randMToN(double M, double N){
 	return M + (rand() / ( RAND_MAX / (N-M) ) ) ; 
 }
 
-bool check_winner(experimental_assignment1::Check::Request &req, experimental_assignment1::Check::Response &res){
+void check_winner(experimental_assignment1::Check::Request &req, experimental_assignment1::Check::Response &res){
     std_msgs::String winner_id;
     winner_id.data="ID3";
     if(req.id==winner_id.data){
