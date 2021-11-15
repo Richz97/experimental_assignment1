@@ -10,6 +10,8 @@
 
 ros::Publisher publisher;
 ros::Subscriber subscriber;
+std_msgs::String winner_id;
+winner_id.data="ID3";
 
 char *hints[15]={"ID1/where/Conservatory", "ID1/what/Dagger","ID1/where/Kitchen", 
 	   "ID2/who/Plum", "ID2/what/Spanner","ID2/where/Hall",
@@ -50,8 +52,6 @@ double randMToN(double M, double N){
 }
 
 void check_winner(experimental_assignment1::Check::Request &req, experimental_assignment1::Check::Response &res){
-    std_msgs::String winner_id;
-    winner_id.data="ID3";
     if(req.id==winner_id.data){
         res.ok=true;
     }
