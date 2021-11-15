@@ -35,7 +35,7 @@ int main(int argc, char **argv){
     ros::ServiceServer srv=n2.advertiseService("/check", check_winner);
     srand(time(NULL));
     ros::spin();
-	return 0;
+    return 0;
 }
 
 
