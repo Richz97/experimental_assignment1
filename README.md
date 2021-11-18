@@ -68,7 +68,7 @@ The message [Hypo.msg](https://github.com/Richz97/experimental_assignment1/blob/
 ## Temporal diagram
 ![TEMPORAL](https://github.com/Richz97/experimental_assignment1/blob/main/diagrams/TEMPORAL.png)
 ## States diagram
-![STATES](https://github.com/Richz97/experimental/blob/main/diagrams/STATES.png)
+![STATES](https://github.com/Richz97/experimental_assignment1/blob/main/diagrams/STATES.png)
 ## Rqt-graph
 Here we can see the rqt-graph of the entire system:
 
