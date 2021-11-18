@@ -114,9 +114,10 @@ The biggest limitations are due to the lack of a real simulation of the robot an
 A future improvment will be for sure implementing the motion and provide the user with a graphical way to see where the robot is moving and what is the current state of the program in a more intuitive way.
 Another improvment that can be made is the handling of the end of the robot process.
 Also it is needed to add the possibility of changing the hints and the winning hypothesis from outside the code.
-# Authors and contacts
+# Author and contacts
 Author: Riccardo Zuppetti
-Contact: riccardo.zuppetti@icloud.com
+
+Contacts: riccardo.zuppetti@icloud.com
 
 
 
