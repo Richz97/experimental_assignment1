@@ -88,7 +88,7 @@ chmod +x hint_controller.py
 ```
 5. Go to the root of the workspace, and from there launch `catkin_make`
 
-6. Go to catkin_ws/src/experimental_assignment1 and digit the command
+6. Go to catkin_ws/src/experimental_assignment1/launch and digit the command
 ```
 roslaunch experimental_assignment1 simulation.launch
 ```
