@@ -93,24 +93,16 @@ chmod +x hint_controller.py
 roslaunch experimental_assignment1 simulation.launch
 ```
 # Description of the execution
-// link_video
-
-In this video it is possible to see what happens when we launch the simulation, which is launched by the above command.
-
-Seeing the video, we could notice that, by default, the robot is in the state 0, i.e., the robot should reach a random target in the environment. As can be seen, the robot randomly chooses coordinates from the possible ones that correspond to possible rooms. Established the target, the robot goes to this room and once there finds a hint. Each time the hint is checked and handled by the hint node.
-
-Instead, if the robot is the state 1 it has received a possible valid hypothesis, so it goes to the oracle room and proposes its hypothesis. Since the correct hypothesis is set as "ID3", obviously the oracle with the `/check` service will return a boolean False and the answer Wrong to the robot. Then the robot will resume searching fors hints and thus to the behaviour seen in the previous screenshot. In this screen you can also see that when a hypothesis has already been checked, the hint node will no longer handle the hint of that hypothesis avoiding checking one that has already been checked. This is communicated by the Mange Hypothesis: print which tells if: the hypothesis is complete or consistent, if it is not, or if it has already been checked. 
-
-In this last screenshot we see the same situation as before but this time the hypothesis found is the winning one, so the oracle will return the boolean True and tell the robot Right. In this case, the script exits the loop and the programme ends.
-# Working hypothesis and environment
-This system is semplified in order to have a structure that can be changed easily and improved as needed. It is assumed that the hints are from a finite set of possibilities that does not change in time, the winning hypothesis is fixed and can be changed only manually by working on the code. The node that should implement the movement to a location is simply a wait of 0.5 seconds to simulate the motion without actually implementing it, we assume it takes some time to reach the room and that we don't have any obstacle.
-## System's features
+The execution of the project is redirected to the following video:
+// video link
+Refer to the description of the latter for more information on what is displayed on the screen.
+# System's features
 The system is really flexible and is able to handle random hints received at a random time.
 In order to have a faster system it also saves the hypothesis that have already been made and it avoids repeating them, this prevents the robot from moving to home pointlessly every time it receives a hint from an hypothesis that is already been checked.
 This system implements the randomness by using the rand function and the srand function. The srand is used to change the seed of the random function, it takes as input the time of the system and so the seed changes at every run of the code. By changing the seed we can ensure that the random number that are generated each time are different and so different situations can be tested by running the code multiple times.
-## System's limitations
+# System's limitations
 The biggest limitations are due to the lack of a real simulation of the robot and the environment. For the moment, in fact, we have a very abstract system where the behaviour of the robot and the environment are represented by several functions
-## System's technical improvements
+# System's technical improvements
 A future improvment will be for sure implementing the motion and provide the user with a graphical way to see where the robot is moving and what is the current state of the program in a more intuitive way.
 Another improvment that can be made is the handling of the end of the robot process.
 Also it is needed to add the possibility of changing the hints and the winning hypothesis from outside the code.
