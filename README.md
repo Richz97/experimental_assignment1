@@ -98,16 +98,14 @@ The execution of the project is redirected to the following video:
 // video link
 
 Refer to the description of the latter for more information on what is displayed on the screen.
-# System's features
-The system is really flexible and is able to handle random hints received at a random time.
-In order to have a faster system it also saves the hypothesis that have already been made and it avoids repeating them, this prevents the robot from moving to home pointlessly every time it receives a hint from an hypothesis that is already been checked.
-This system implements the randomness by using the rand function and the srand function. The srand is used to change the seed of the random function, it takes as input the time of the system and so the seed changes at every run of the code. By changing the seed we can ensure that the random number that are generated each time are different and so different situations can be tested by running the code multiple times.
-# System's limitations
-The biggest limitations are due to the lack of a real simulation of the robot and the environment. For the moment, in fact, we have a very abstract system where the behaviour of the robot and the environment are represented by several functions
-# System's technical improvements
-A future improvment will be for sure implementing the motion and provide the user with a graphical way to see where the robot is moving and what is the current state of the program in a more intuitive way.
-Another improvment that can be made is the handling of the end of the robot process.
-Also it is needed to add the possibility of changing the hints and the winning hypothesis from outside the code.
+# Working hypothesis and environment
+As said at the beginning, the structure of this project is very simplified, an aspect that means that this structure can be improved and changed according to the required needs. All provided hints refer to a finite set of elements, which do not change over the course of execution. The winning hypothesis, fixed, can be modified at will, by modifying the appropriate line of code that refers to the winning identifier. Furthermore, the sleep functions present within the code have the objective of simulating both a computation and a movement within the environment by the robot.
+## System's features
+The whole system is able to manage hints, selected randomly, received randomly. In order to speed up the game, the system is able to recognize the hypotheses that have already been considered and rejected because they are not winning. This means that the robot does not have to go multiple times to the oracle, to verify a hint that refers to a hypothesis already considered. The randomity used in the system refers to a srand function and a function created specifically to generate random numbers. The srand function is just used to change the seed of this random function. This ensures that the random numbers generated are never the same, so you don't run into multiple unnecessary executions.
+## System's limitations
+The two limitations that are quite evident concern the simulation of the movement, which being a simulation does not refer to a graphical interface that allows in real time to see where the robot is actually located, and the fact that the possible hints and winning hypothesis are set from the start. A further limitation concerns the end of the game: in fact, when the game ends there is no direct start of a game session.
+## System's technical improvements
+In a subsequent implementation, referring to the aforementioned limitations, it could be possible to introduce a graphical interface that allows you to see, in real time, where the robot is actually located. Still with reference to the current limitations, a new game session could be started automatically at the end of the game without relaunching the project. Finally, the user could be allowed to modify the hints to be generated, and consequently also the winning hypothesis.
 # Author and contacts
 Author: Riccardo Zuppetti
 
