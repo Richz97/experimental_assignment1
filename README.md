@@ -95,7 +95,7 @@ roslaunch experimental_assignment1 simulation.launch
 # Description of the execution
 The execution of the project is redirected to the following video:
 
-// video link
+https://youtu.be/z_1iIqESyJQ
 
 Refer to the description of the latter for more information on what is displayed on the screen.
 # Working hypothesis and environment
