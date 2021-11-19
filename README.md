@@ -94,7 +94,9 @@ roslaunch experimental_assignment1 simulation.launch
 ```
 # Description of the execution
 The execution of the project is redirected to the following video:
+
 // video link
+
 Refer to the description of the latter for more information on what is displayed on the screen.
 # System's features
 The system is really flexible and is able to handle random hints received at a random time.
